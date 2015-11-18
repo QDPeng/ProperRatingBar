@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -64,7 +65,7 @@ public class ProperRatingBar extends LinearLayout {
     private Drawable tickNormalDrawable;
     private Drawable tickSelectedDrawable;
     private int tickSpacing;
-
+    private float starImageSize;//set tickImageSize
     private boolean useSymbolicTick = false;
     private int rating;
     private RatingListener listener = null;
@@ -78,6 +79,7 @@ public class ProperRatingBar extends LinearLayout {
     private void init(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ProperRatingBar);
         //
+        starImageSize = a.getDimension(R.styleable.ProperRatingBar_prb_imageSize, 15);
         totalTicks = a.getInt(R.styleable.ProperRatingBar_prb_totalTicks, DF_TOTAL_TICKS);
         rating = a.getInt(R.styleable.ProperRatingBar_prb_defaultRating, DF_DEFAULT_TICKS);
         if (rating > totalTicks) rating = totalTicks;
@@ -137,6 +139,12 @@ public class ProperRatingBar extends LinearLayout {
 
     private void addDrawableChild(Context context, int position) {
         ImageView iv = new ImageView(context);
+        //set Image Size
+        ViewGroup.LayoutParams para = new ViewGroup.LayoutParams(
+                Math.round(starImageSize),
+                Math.round(starImageSize)
+        );
+        iv.setLayoutParams(para);
         iv.setPadding(tickSpacing, tickSpacing, tickSpacing, tickSpacing);
         if (isClickable) {
             iv.setTag(R.id.prb_child_tag_id, position);

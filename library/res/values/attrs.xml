@@ -26,7 +26,8 @@
 
 <resources>
     <declare-styleable name="ProperRatingBar" >
-
+        <!--set image size Default is 15dp-->
+        <attr name="prb_imageSize" format="dimension"/>
         <!-- Total number of ticks to show. Default is '5' -->
         <attr name="prb_totalTicks" format="integer" />
 
