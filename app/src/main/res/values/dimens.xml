@@ -8,4 +8,5 @@
     <dimen name="sample_symbolic_tick_text_size">20sp</dimen>
     <dimen name="sample_default_margin">16dp</dimen>
     <dimen name="sample_prb_tick_spacing">5dp</dimen>
+    <dimen name="sample_prb_image_size">50dp</dimen>
 </resources>

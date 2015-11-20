@@ -65,7 +65,7 @@ public class ProperRatingBar extends LinearLayout {
     private Drawable tickNormalDrawable;
     private Drawable tickSelectedDrawable;
     private int tickSpacing;
-    private float starImageSize;//set tickImageSize
+    private float starImageSize;
     private boolean useSymbolicTick = false;
     private int rating;
     private RatingListener listener = null;
@@ -139,11 +139,7 @@ public class ProperRatingBar extends LinearLayout {
 
     private void addDrawableChild(Context context, int position) {
         ImageView iv = new ImageView(context);
-        //set Image Size
-        ViewGroup.LayoutParams para = new ViewGroup.LayoutParams(
-                Math.round(starImageSize),
-                Math.round(starImageSize)
-        );
+        ViewGroup.LayoutParams para = new ViewGroup.LayoutParams(Math.round(starImageSize), Math.round(starImageSize));
         iv.setLayoutParams(para);
         iv.setPadding(tickSpacing, tickSpacing, tickSpacing, tickSpacing);
         if (isClickable) {

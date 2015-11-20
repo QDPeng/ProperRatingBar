@@ -47,7 +47,7 @@
         android:layout_margin="@dimen/sample_default_margin"
         app:prb_clickable="true"
         app:prb_defaultRating="4"
-        app:prb_imageSize="60dp"
+        app:prb_imageSize="@dimen/sample_prb_image_size"
         app:prb_tickNormalDrawable="@drawable/ic_star_normal"
         app:prb_tickSelectedDrawable="@drawable/ic_star_selected"
         app:prb_tickSpacing="@dimen/sample_prb_tick_spacing"
